@@ -23,9 +23,17 @@ const privacy_policy = () => (
               <h1 className="mb-5">
                 Privacy Policy<br/>
               </h1>
-              <h2>
+              <h2 className="langCng" lang="ja">
+                このアプリケーションは、広告配信ツールとしてAdMob（Google Inc.）を使用しています。<br/>
+                AdMobはユーザー情報を自動的に取得する場合があります。
+              </h2>
+              <h2 className="langCng" lang="en">
                 This application uses AdMob (Google Inc.) as an advertisement distribution tool, <br/>
                 and AdMob may automatically acquire user information.
+              </h2>
+              <h2 className="langCng" lang="ko">
+              이 애플리케이션은 AdMob(Google Inc.)를 광고 배포 도구로 사용합니다. <br/>
+              AdMob은 자동으로 사용자 정보를 얻을 수 있습니다.
               </h2>
             </div>
           </div>

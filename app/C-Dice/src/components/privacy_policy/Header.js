@@ -13,6 +13,23 @@ export default class Header extends Component {
     this.setState({ openMenu: value });
   };
 
+  langChange = () => {
+    const languages = document.getElementById('languages');
+    if (languages) {
+      const selectedLang = languages.value;
+      var elm = document.getElementsByClassName("langCng");
+      for (var i = 0; i < elm.length; i++) {
+        // --- 選択された言語と一致は表示、その他は非表示 -------
+        if(elm[i].getAttribute("lang") == selectedLang){
+          elm[i].style.display = '';
+        }
+        else{
+          elm[i].style.display = 'none';
+        }
+      }
+    }
+  }
+
   handleScroll = () => {
     const { visibilityClass } = this.state;
     if (window.pageYOffset > 300) {
@@ -26,6 +43,7 @@ export default class Header extends Component {
     }
   };
   componentDidMount() {
+    this.langChange();
     window.addEventListener('scroll', this.handleScroll);
   }
   componentWillUnmount() {
@@ -83,6 +101,13 @@ export default class Header extends Component {
                     Contact
                   </a>
                 </Scroll>
+              </li>
+              <li className="nav-item">
+                <select id="languages" className="langSelect" onChange={_ => this.langChange()}>
+                  <option value="ja">日本語</option>
+                  <option value="en">英語</option>
+                  <option value="ko">韓国語</option>
+                </select>
               </li>
             </ul>
           </div>
